@@ -1,4 +1,4 @@
-# MLflow x Hydra - a template for using both effectively in machine learning experiments
+# MLflow x Hydra
 
 My annotated script template for using MLflow together with Hydra.
 
