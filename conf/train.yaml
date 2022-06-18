@@ -1,0 +1,24 @@
+# Metadata
+# --------
+expname: testrun
+runname: # Left blank on purpose, to be specified in CLI
+
+# Hyperparameters
+# ---------------
+n_epochs: 10
+lr: 1e-5
+batch_size: 32
+
+# Hydra-specific config
+# ---------------------
+# The following stores single runs and multiruns (sweeps) in a hidden .hydra dir
+hydra:
+  run:
+    dir: .hydra/${now:%Y-%m-%d_%H-%M-%S}
+    # If this works for you why not
+    # dir: .hydra/${expname}/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: .hydra/${now:%Y-%m-%d_%H-%M-%S}
+    # If this works for you why not
+    # dir: .hydra/${expname}/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.num}
